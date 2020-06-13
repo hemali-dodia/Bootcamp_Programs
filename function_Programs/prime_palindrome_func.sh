@@ -43,4 +43,6 @@ prime="$( prime $n )"
 if [ $prime -eq $pal ]
 then
 	echo "number is prime and palindrome"
+else
+	echo "it is not prime and palindrome"
 fi
