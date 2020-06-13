@@ -1,0 +1,9 @@
+dhsadslsdkjd
+djhsjkcnskj oiwodjksnc,ncds
+dcdiosncknc
+kdowipowqieoiweyrueu ufioufoweif
+
+Tue, Jun 2, 2020 4:10:27 PM
+now="$(date+%d%m%Y)"
+
+Wed, Jun  3, 2020  4:29:19 PM

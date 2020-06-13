@@ -1,0 +1,11 @@
+kajsdsksdjfkdjfsdjf;sdfjkf
+
+x=2;
+switch($x)
+{
+case 1: echo 1; break;
+case 2: echo 2; break;
+case 3: echo 3; break;
+default: echo deaf;
+}
+Fri, Jun  5, 2020  1:01:11 PM
