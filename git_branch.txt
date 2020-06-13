@@ -1,0 +1,59 @@
+git init
+#initialize git 
+
+git remote add reference_keyword url_of_repository
+#sync git repo with local machine
+
+git add file_name
+#adds file to git repository
+
+git commit -m "msg"
+#commits file with msg
+
+git pull referenec_keyword branch_name
+#pulls file from that branch
+
+git push reference_keyword branch_name
+#pushes file to repository 
+
+git log 
+#to check commit status and numbers of commits
+
+git checkout commit_number
+#to check perticular commit number
+
+git reset  --soft commit_number
+#to reset git head pointer
+
+git diff commit_number
+#shows only modified part of code
+
+git checkout -b "branch_name" reference_word(origin)/master
+or
+git branch branch_name
+#to create new branch
+
+git checkout branch_name
+#to move from one branch to another branch
+
+git status
+#to check which files are modified/new and not added to git repository
+
+git merge branch_name
+or
+git pull branch_name
+#branch_name_from_which_we_want_to_move_code_to_master_branch
+
+git push branch_name --allow-unrelated-histores
+#allows pushing code from local machine to repo when your local machine dont have code/file from repositories
+
+#to upload folder in git repo, 
+go to root floder(parent folder containing sub folders which you want to upload) => check status(git status) => add folders to repo(git add .) => commit it with msg(git commit -m "msg") => pull from repo(git pull branch_name) => push it to repo(git push reference_word branch_name)
+
+git restore --staged planet
+or
+git checkout folder/file_name
+#to restore privious code and removes changes from code
+
+git diff folder/file_name
+#shows changed part of code
