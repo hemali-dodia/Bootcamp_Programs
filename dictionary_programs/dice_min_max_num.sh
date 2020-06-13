@@ -7,9 +7,9 @@ c4=0
 c5=0
 c6=0
 declare -i roll_die
-for (( i=0; i<10; i++ ))
+while [ 1 ]
 do
-	roll_die[i]=$(($RANDOM%6+1))
+	roll_die[$i]=$(($RANDOM%6+1))
 	case "${roll_die[i]}" in
 		1)	((c1++));;
 		2)	((c2++));;
@@ -18,7 +18,32 @@ do
 		5)	((c5++));;
 		6)	((c6++));;
 	esac
+	if [ $c1 -eq 10 ]
+	then
+		break
+	fi
+	if [ $c2 -eq 10 ]
+	then
+		break
+	fi
+	if [ $c3 -eq 10 ]
+	then
+		break
+	fi
+	if [ $c4 -eq 10 ]
+	then
+		break
+	fi
+	if [ $c5 -eq 10 ]
+	then
+		break
+	fi
+	if [ $c6 -eq 10 ]
+	then
+		break
+	fi
 done
+
 res[1]=$c1
 res[2]=$c2
 res[3]=$c3
@@ -28,15 +53,16 @@ res[6]=$c6
 echo ${res[@]}
 max=1
 min=6
-for (( i=1; i<=6; i++ ))
+
+for (( j=1; j<=${#res[@]}; j++ ))
 do
-	if [ ${res[i]} -gt $max ]
+	if [ ${res[j]} -gt $max ]
 	then
-		max=${res[i]}
-	elif [ ${res[i]} -lt $min ]
+		max=${j}
+	fi
+	if [ ${res[j]} -lt $min ]
 	then
-		min=${res[i]}
+		min=${j}
 	fi
 done
-
 echo $max $min
