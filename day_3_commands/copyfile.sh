@@ -3,7 +3,7 @@
 for files in `ls *.txt`;
 do
 	foldername=`echo $files | awk -F. '{print $1}'`;
-	#echo "checking for directories existed";
+	echo "checking for directories existed"
 	if [ -d $foldername ]
 	then
 		rm -r $foldername;
