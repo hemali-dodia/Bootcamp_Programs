@@ -13,7 +13,7 @@ function valFirstLastName(){
 	fi
 }
 
-read -p "enter first name and last name: " First_name Last_name;
+read -p "enter first name and last name:" First_name Last_name;
 
 firstName="$( valFirstLastName $First_name )"
 lastName="$( valFirstLastName $Last_name )"
@@ -60,4 +60,3 @@ function passwordVal(){
 }
 read -p "enter password: " password;
 pswd="$( passwordVal $password )"
-
