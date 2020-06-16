@@ -4,7 +4,7 @@ shopt -s extglob
 
 function valFirstLastName(){
 	local Name=$1
-	F_L_Pattern="^[A-Z][a-z]{3,}$"
+	F_L_Pattern="^[A-Z][a-z]{2,}$"
 	if [[ $Name =~ $F_L_Pattern ]]
 	then
 		echo "Accepted"
@@ -50,7 +50,7 @@ mob_num="$( ValMobileNumber $Code $Number )"
 
 function passwordVal(){
 	local pw=$1
-	passPattern="(@[A-Z%+]?[!@#$%?]@[0-9%+]){8,}$"
+	passPattern="([A-Za-z0-9]){8,}$"
 	if [[ $pw =~ $passPattern ]]
 	then
 		echo "valid password"
@@ -60,3 +60,4 @@ function passwordVal(){
 }
 read -p "enter password: " password;
 pswd="$( passwordVal $password )"
+
