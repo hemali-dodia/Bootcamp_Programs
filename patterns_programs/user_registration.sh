@@ -60,3 +60,4 @@ function passwordVal(){
 }
 read -p "enter password: " password;
 pswd="$( passwordVal $password )"
+
