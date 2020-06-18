@@ -1,0 +1,45 @@
+class addressBook{
+listOfPerson()
+addressBookService()
+
+}
+
+class person
+{
+	first name
+	last name
+	address
+	city
+	state
+	zip
+	phone num
+
+}
+
+class addressBookService{
+toCreatNewAddressBook(open,save,saveAs)
+toOpenAddressBook(open,save,saveAs,edit,quit)
+toAddNewPerson(){
+	first name
+	last name
+	address
+	city
+	state
+	zip
+	state
+	phone num
+}
+toEditPersonDetails()
+	name.{address,city,state,zip,phone num}
+
+toDeletePerson()
+
+toSort()
+	last name.first name
+
+toPrint()
+
+}
+class fileSystem{
+
+}
