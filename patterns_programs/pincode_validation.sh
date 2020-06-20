@@ -2,7 +2,7 @@
 
 shopt -s extglob
 
-pin='1234#B'
+read -p "enter pin code:" pin
 
 if [[ $pin =~ ^[0-9]{3}[\ ][0-9]{3}$ || $pin =~ ^[0-9]{6}$ ]];
 then
