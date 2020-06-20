@@ -18,7 +18,14 @@ class person
 
 class addressBookService{
 toCreatNewAddressBook(open,save,saveAs)
-toOpenAddressBook(open,save,saveAs,edit,quit)
+toEditAddressBook(){
+close
+open(from file)
+save(to file)
+saveAs
+edit
+quit(terminate program, close address book)
+}
 toAddNewPerson(){
 	first name
 	last name
@@ -33,13 +40,17 @@ toEditPersonDetails()
 	name.{address,city,state,zip,phone num}
 
 toDeletePerson()
-
+	name
 toSort()
-	last name.first name
+	last name.first name/zip code
 
 toPrint()
 
 }
 class fileSystem{
-
+open
+close
+save
+save as
+quit(close all address book, terminate program)
 }
