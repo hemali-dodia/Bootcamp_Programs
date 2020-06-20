@@ -36,7 +36,7 @@ email_validation="$( validEmail $email )"
 function ValMobileNumber(){
 	local CC=$1
 	local Num=$2
-	CodePat="^[0-9]{2}$"
+	CodePat="^[0-9+]{3}$"
 	NumPat="^[0-9]{10}$"
 	if [[ $CC =~ $CodePat && $Num =~ $NumPat ]]
 	then
