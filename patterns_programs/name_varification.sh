@@ -4,7 +4,8 @@ shopt -s extglob
 
 function valFirstLastName(){
         local Name=$1
-        F_L_Pattern="^[A-Z][a-z]{2,}$"
+	F_L_Pattern="^[A-Z]{1}[a-z]{2,}$"
+        #F_L_Pattern=^[A-Z][a-z]{2,}$"
         if [[ $Name =~ $F_L_Pattern ]]
         then
                 echo "Accepted"
