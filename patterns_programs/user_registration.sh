@@ -14,13 +14,12 @@ function valFirstLastName(){
 }
 
 read -p "enter first name and last name:" First_name Last_name;
-
-firstName="$( valFirstLastName $First_name )"
-lastName="$( valFirstLastName $Last_name )"
+valFirstLastName $First_name
+valFirstLastName $Last_name
 
 function validEmail(){
 	local email=$1
-	emailpattern="^[0-9a-zA-Z]+([._+-][0-9a-zA-Z]+)*@[0-9a-zA-Z]+.[0-9a-zA-Z]{2,4}([.][a-zA-Z]{2})$"
+	emailpattern="^[0-9a-zA-Z]+([._+-][0-9a-zA-Z]+)*@[0-9a-zA-Z]+\.[0-9a-zA-Z]{2,4})$"
 
 	if [[ $email =~ $emailpattern ]]
 	then
@@ -28,10 +27,9 @@ function validEmail(){
 	else
 	        echo "invalid email"
 	fi
-
 }
 read -p "enter your email: " email
-email_validation="$( validEmail $email )"
+validEmail $email
 
 function ValMobileNumber(){
 	local CC=$1
@@ -46,19 +44,18 @@ function ValMobileNumber(){
 	fi
 }
 read -p "enter mob number with country code: " Code Number;
-mob_num="$( ValMobileNumber $Code $Number )"
+ValMobileNumber $Code $Number
 
 function passwordVal(){
         local pw=$1
         passPattern1="^([A-Za-z0-9@#!]){8,}$"
         passPattern2="^([a-z0-9@#!]*)[A-Z]+([a-z0-9@#!]*)$"
-        passPattern3="^[a-zA-Z0-9]*[0-9]+[a-zA-Z@#!]*$"
+        passPattern3="^[a-zA-Z0-9]*[0-9]+[a-z0-9A-Z@#!]*$"
         passPattern4="^([a-zA-Z0-9]*)[^a-zA-Z_0-9\ ]([a-zA-Z0-9]*)$"
         if [[ $pw =~ $passPattern1 ]]
         then
                 if [[ $pw =~ $passPattern2 ]]
                 then
-
                         if [[ $pw =~ $passPattern3 ]]
                         then
                                 if [[ $pw =~ $passPattern4 ]]
@@ -68,14 +65,14 @@ function passwordVal(){
                                         echo "invalid password"
                                 fi
                         else
-                                echo "invalid3"
+                                echo "error: enter at least 1 number"
                         fi
                 else
-                        echo "invalid2"
+                        echo "error: enter at least one special character"
                 fi
         else
-                echo "invalid1"
+                echo "error: length should be at least 8 characters"
         fi
 }
 read -p "enter password: " password;
-pswd="$( passwordVal $password )"
+passwordVal $password
