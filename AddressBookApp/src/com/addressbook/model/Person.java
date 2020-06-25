@@ -1,39 +1,37 @@
 package com.addressbook.model;
 public class Person
 {
-	private String name;
-
-	private String city;
-
-	private String address;
-
-	private String state;
-
-	private int zip;
-
-	private int ph_num;
+	String name;
+	String state;
+	String city;
+	String address;
+	double ph_num;
+	int zip;
 
 	public void setName(String name){
 		this.name=name;
 	}
+	public void setState(String state){
+		this.state=state;
+	}
 	public void setCity(String city){
 		this.city=city;
 	}
-	public void setAddress(String Address){
+	public void setAddress(String address){
 		this.address=address;
 	}
-	public void setState(String State){
-		this.state=state;
+	public void setPh_num(double ph_num){
+		this.ph_num=ph_num;
 	}
 	public void setZip(int zip){
 		this.zip=zip;
 	}
-	public void setPh_num(int ph_num){
-		this.ph_num=ph_num;
-	}
 
 	public String getName(){
 		return this.name;
+	}
+	public String getState(){
+		return this.state;
 	}
 	public String getCity(){
 		return this.city;
@@ -41,13 +39,10 @@ public class Person
 	public String getAddress(){
 		return this.address;
 	}
-	public String getState(){
-		return this.state;
+	public double getPh_num(){
+		return this.ph_num;
 	}
 	public int getZip(){
 		return this.zip;
-	}
-	public int getPh_num(){
-		return this.ph_num;
 	}
 }
