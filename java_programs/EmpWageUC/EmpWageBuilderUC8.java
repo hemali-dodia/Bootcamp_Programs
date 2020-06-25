@@ -1,10 +1,21 @@
 public class EmpWageBuilderUC8
 {
-	public static final int Wage_Per_Hour = 20;
-        public static final byte Full_Day_Hour = 8;
-        public static final byte Half_Day_Hour = 4;
-	public static final int Total_Working_Days = 20;
-        public static final int Total_Working_Hour = 100;
+	private final String Compny_name;
+	private final int Wage_Per_Hour;
+	private final int Full_Day_Hour;
+	private final int Half_Day_Hour;
+	private final int Total_Working_Days;
+        private final int Total_Working_Hour;
+
+	public static EmpWageForDiffCompany(String Compny_name, int Wage_Per_Hour, int Full_Day_Hour, int Half_Day_Hour, int Total_Working_Days, int Total_Working_Hour)
+	{
+		this.Compny_name = Compny_name;
+		this.Wage_Per_Hour = Wage_Per_Hour;
+		this.Full_Day_Hour = Full_Day_Hour;
+		this.Half_Day_Hour = Half_Day_Hour;
+		this.Total_Working_Days = Total_Working_Days;
+		this.Total_Working_Hour = Total_Working_Hour;
+	}
 
 	public static int EmpAttendance()
 	{
@@ -28,6 +39,8 @@ public class EmpWageBuilderUC8
 
 	public static void main(String[] args)
         {
+		EmpWageBuilderUC8 company_1 = new EmpWageBuilderUC8("company_1", 20, 8, 4, 20, 100);
+
 		int EmpWageFullDay = 0;
 		int EmpWageHalfDay = 0;
 		int totalWorkingDays = 0;
@@ -35,7 +48,7 @@ public class EmpWageBuilderUC8
 		int totalWage = 0;
 		int Wage = 0;
 
-		while(WorkingHour <= Total_Working_Hour && totalWorkingDays <= Total_Working_Days)
+		while(WorkingHour <= company_1.Total_Working_Hour && totalWorkingDays <= company_1.Total_Working_Days)
 		{
 			if(EmpAttendance()==1)
 			{
@@ -43,14 +56,14 @@ public class EmpWageBuilderUC8
 				switch(Part_Full_time)
 				{
 					case 0:
-						EmpWageHalfDay = EmpWage(Half_Day_Hour);
+						EmpWageHalfDay = EmpWage(company_1.Half_Day_Hour);
 						Wage = Wage + EmpWageHalfDay;
-        	        			WorkingHour = WorkingHour + Half_Day_Hour;
+        	        			WorkingHour = WorkingHour + company_1.Half_Day_Hour;
 						break;
         				case 1:
-						EmpWageFullDay = EmpWage(Full_Day_Hour);
+						EmpWageFullDay = EmpWage(company_1.Full_Day_Hour);
 						Wage = Wage + EmpWageFullDay;
-        	        			WorkingHour = WorkingHour + Full_Day_Hour;
+        	        			WorkingHour = WorkingHour + company_1.Full_Day_Hour;
 						break;
 					default:
 						System.out.println("employee wage = 0");
